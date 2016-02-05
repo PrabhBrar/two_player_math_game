@@ -1,0 +1,26 @@
+initialize player1 lives to three
+initialize player2 lives to three
+initialize player1 score to zero
+initialize player2 score to zero
+initialize a count to zero
+initialize number1 to zero
+initialize number2 to zero
+initialize a variable to Random.new()
+
+loop until both players have > 0 lives
+  generate two random numbers
+  print a question to add the two numbers
+  get input from the user
+  if input matches the sum
+    increment player1 score for even count
+    increment player2 score for odd count
+    increment the count
+  else
+    print the scores of both the players
+    decrement player1 life for even count
+    decrement player2 life for odd count
+
+if player1 score is greater than playerw score
+  print player1 won the game and the respective scores
+else
+  print player2 won the game and the respective scores
