@@ -8,8 +8,7 @@ class Player
   def initialize (name)
     @name = name
     @total_score = 0
-    @lives = 3
-    @score = 0
+    reset
   end 
   
   # Reset the lives and score for any instance of the Player object.
