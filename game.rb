@@ -1,7 +1,7 @@
 require 'pry'
 require 'colorize'
 require_relative 'question'
-require_relative 'two_player_math_game'
+require_relative 'player'
 
 class Game
 
