@@ -12,7 +12,7 @@ class Question
     generate_numbers
     generate_operator
     generate_answer
-    "What does #{@num1} #{@operator[@num3]} #{@num2} equal?"
+    "What does #{@num1} #{@operator[@num3]} #{@num2} equal? "
   end
 
   def generate_numbers
