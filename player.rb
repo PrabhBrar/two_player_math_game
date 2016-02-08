@@ -1,9 +1,9 @@
 class Player
-  attr_reader :lives, :score, :total_score
-  attr_accessor :name, :answer
+  attr_reader :lives, :score, :total_score, :name
+  attr_accessor :answer
   
-  def initialize ()
-    @name = nil
+  def initialize (name)
+    @name = name
     @total_score = 0
     reset
   end 
