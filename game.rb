@@ -1,4 +1,3 @@
-require 'pry'
 require 'colorize'
 require_relative 'question'
 require_relative 'player'
@@ -6,8 +5,7 @@ require_relative 'player'
 class Game
 
   def initialize
-    @players = [Player.new, Player.new]
-    @current_player = @players[0]
+    @players = []
     @question = Question.new
   end
 
@@ -17,19 +15,19 @@ class Game
   def summary
     puts "This is a Two Player Math Game.".green
     puts "Answer easy maths questions to prove your knowledge of maths.".green
-    print "Do you want to play?(y/n): "
-    get_choice
-    start_or_end
+    ask_name("1")
+    ask_name("2")
+    @current_player = @players[0]
+    start_game
   end
 
   # Prompts the users to enter their names.
   # Also gets their name and stores them in a variable.
   # Always returns a String.
-  def ask_names
-    print "Player 1, please enter your name : "
-    @players[0].name = gets.chomp
-    print "Player 2, please enter your name : "
-    @players[1].name = gets.chomp
+  def ask_name(label)
+    print "Player #{label}, please enter your name : "
+    name = gets.chomp
+    @players << Player.new(name)
   end
 
   # Gets the choice from the user.
@@ -46,7 +44,6 @@ class Game
   # Decides if the game has to be started or not.
   def start_or_end
     if choice?
-      ask_names unless @players[0].name  && @players[1].name 
       start_game
     else
       end_game
